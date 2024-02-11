@@ -38,11 +38,6 @@
             <artifactId>javafaker</artifactId>
             <version>1.0.2</version>
         </dependency>
-        <dependency>
-            <groupId>net.alchim31.maven</groupId>
-            <artifactId>scala-maven-plugin</artifactId>
-            <version>${scala-maven-plugin.version}</version>
-        </dependency>
     </dependencies>
 
     <build>
@@ -53,7 +48,6 @@
                 <artifactId>gatling-maven-plugin</artifactId>
                 <version>${gatling-maven-plugin.version}</version>
                 <configuration>
-                    <!--   ...  -->
                     <runMultipleSimulations>true</runMultipleSimulations>
                     <includes>
                         <include>simulations.basics.AddPauseTest</include>
@@ -62,6 +56,22 @@
                     <excludes>
                         <exclude>my.package.IgnoredSimulation</exclude>
                     </excludes>
+                    <apiToken>D5WUcHSD4flBX4VfYF.lrrsGMxszUTuIoTSfkMO6O1U0HDO5bXxHHBFi2pPqyGCpI</apiToken>
+                    <!-- Simulation that needs to be started, you will be able to create a new simulation if empty -->
+                    <simulationId>c74ed502-60f7-44a0-8baa-98235dd03b42</simulationId>
+                    <!-- Default package when creating a new simulation -->
+                    <!-- You can also use the gatling.enterprise.packageId system property -->
+                    <packageId>23430515-cc96-4760-a43d-09fa2850e6c9</packageId>
+                    <!-- Default team when creating a new simulation -->
+                    <!-- You can also use the gatling.enterprise.teamId system property -->
+                    <teamId>ec1e53da-717e-4666-9a5f-40bc39aa2b6a</teamId>
+                    <!-- Fully-qualified class name of the simulation used when creating a new simulation -->
+                    <!-- You can also use the gatling.simulationClass system property -->
+                    <simulationClass>simulations.basics.AddPauseTest</simulationClass>
+                    <!-- Wait for the result after starting the simulation on Gatling Enterprise -->
+                    <!-- Will complete with an error if the simulation ends with any error status -->
+                    <!-- False by default; you can also use the gatling.enterprise.waitForRunEnd system property -->
+                    <waitForRunEnd>true</waitForRunEnd>
                 </configuration>
             </plugin>
             <plugin>
